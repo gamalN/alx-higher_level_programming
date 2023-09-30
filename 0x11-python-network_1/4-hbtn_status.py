@@ -1,13 +1,9 @@
 #!/usr/bin/python3
-"""disps the val of the X-Request-Id var found in
-the header of the response.
-"""
-
-
+"""Write a Python script that fetches https://alx-intranet.hbtn.io/status"""
+import requests
 if __name__ == "__main__":
-    from requests import get
-
-    html = get('https://alx-intranet.hbtn.io/status')
+    url = 'https://alx-intranet.hbtn.io/status'
+    response = requests.get(url)
     print('Body response:')
-    print("\t- type: {}".format(html.text.__class__))
-    print("\t- content: {}".format(html.text))
+    print('\t- type: {}'.format(type(response.text)))
+    print('\t- content: {}'.format(response.text))
